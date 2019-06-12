@@ -1,8 +1,14 @@
 import { Appear, Notes, Image } from 'mdx-deck'
-export { dark as theme } from 'mdx-deck/themes'
+import { dark as darkTheme } from 'mdx-deck/themes'
+import theme from './theme'
 import { Split } from 'mdx-deck/layouts'
+import Hi from './components/Highlight'
+import SVG from './components/SVG'
+import AppearSplit from './components/AppearSplit'
 
-# Developing for Accessibility
+export const themes = [darkTheme, theme]
+
+# Developing for <Hi>Accessibility</Hi>
 <!-- ### Some tagline -->
 
 ---
@@ -12,22 +18,22 @@ import { Split } from 'mdx-deck/layouts'
 ---
 
 <Appear>
-  <h3>1. Capable of being reached</h3>
-  <h3>2. Capable of being understood or appreciated</h3>
+  <h3>1. Capable of being <Hi>reached</Hi></h3>
+  <h3>2. Capable of being <Hi>understood</Hi> or <Hi>appreciated</Hi></h3>
 </Appear>
 
 ---
 
+## Accessible websites are:
+
 <Appear>
-  <h3>Navigable</h3>
-  <h3>Comprehendible</h3>
+  <h1><Hi>Navigable</Hi></h1>
+  <h1><Hi>Comprehendible</Hi></h1>
 </Appear>
 
 ---
 
 ## A lot of people use assistive technologies
-
----
 
 <Notes>When I say, assistive technologies, I mean things like:</Notes>
 
@@ -55,7 +61,7 @@ import { Split } from 'mdx-deck/layouts'
 
 <Split>
 
-### Joysticks
+### Non-mouse/keyboard input devices
 
 ![](./img/joystick.jpg)
 
@@ -63,6 +69,40 @@ import { Split } from 'mdx-deck/layouts'
 
 ---
 
+<Notes>According to the CDC</Notes>
+
+<Appear>
+
+<h1><Hi>11%</Hi> of US adults are visually impaired in some way</h1>
+
+<h1><Hi>36,000,000</Hi> people</h1>
+
+*\*Does not include normal correctable vision problems*
+
+</Appear>
+
+---
+
+import California from './img/california.js'
+import LeftHanded from './img/left-handed.js'
+
+<AppearSplit
+  left={<California width="30vw"/>}
+  right={<LeftHanded width="30vw"/>}
+/>
+
+---
+
 ## Why should we make the web accessible?
 
 ---
+
+# It's the Law
+
+<Appear>
+
+Covered by the <Hi>Americans with Disabilities Act (ADA)</Hi>
+
+In <Hi>2017 alone</Hi> there were <Hi>817 lawsuits</Hi> over inaccessible websites
+
+</Appear>
