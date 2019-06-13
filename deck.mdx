@@ -1,12 +1,14 @@
 import { Appear, Notes, Image } from 'mdx-deck'
 import { dark as darkTheme } from 'mdx-deck/themes'
+import Syntax from './components/Syntax'
 import theme from './theme'
 import { Split } from 'mdx-deck/layouts'
 import Hi from './components/Highlight'
 import SVG from './components/SVG'
 import AppearSplit from './components/AppearSplit'
+import SplitCode from './components/SplitCode'
 
-export const themes = [darkTheme, theme]
+export const themes = [darkTheme, Syntax, theme]
 
 # Developing for <Hi>Accessibility</Hi>
 <!-- ### Some tagline -->
@@ -93,11 +95,42 @@ import LeftHanded from './img/left-handed.js'
 
 ---
 
+<Notes>According to the CDC</Notes>
+
+<Appear>
+
+<h1><Hi>15%</Hi> of US adults live with a motor impairment</h1>
+
+<h1><Hi>50,000,000</Hi> people</h1>
+
+*\*May include unrelated problems like paralysis of the legs*
+
+</Appear>
+
+---
+
+<AppearSplit
+  left={<img src='./img/stadium.svg' style={{width: "30vw"}}/>}
+  right={<img src='./img/1000-stadiums.png' style={{width: "30vw"}}/>}
+/>
+
+---
+
+<Notes>That's about the same number of people who regret the name they gave their child.</Notes>
+
+<Appear>
+
+<img src='./img/nametag.svg' style={{width: '45vw'}} />
+
+</Appear>
+
+---
+
 ## Why should we make the web accessible?
 
 ---
 
-# It's the Law
+# It's the law
 
 <Appear>
 
@@ -106,3 +139,171 @@ Covered by the <Hi>Americans with Disabilities Act (ADA)</Hi>
 In <Hi>2017 alone</Hi> there were <Hi>817 lawsuits</Hi> over inaccessible websites
 
 </Appear>
+
+---
+
+More importantly:
+
+<Appear>
+
+# It's the right thing to do
+
+Gives <Hi>everyone</Hi> access to the services <Hi>they pay for</Hi> with their taxes
+
+Helps make the web a less frustrating place for <Hi>everybody</Hi>
+
+</Appear>
+
+---
+
+<Notes>Accessibility is a really big topic, but today I want to focus on two main aspects:</Notes>
+
+<Appear>
+
+<h1>1. <Hi>Screen reader support</Hi></h1>
+
+<h1>2. <Hi>Keyboard navigation</Hi></h1>
+
+</Appear>
+
+---
+
+## Rule \#1
+
+<h1><Hi>Let the browser do its job</Hi></h1>
+
+---
+
+HTML documents are accessible <Hi>by default</Hi><br/><br/>
+
+Websites usually become inaccessible <br/>when we <Hi>override</Hi> the browser's default behavior.
+
+---
+
+# Common Problems
+
+---
+
+## Problem \#1
+
+<h2><Hi>Overusing generic elements</Hi> (&lt;<Hi>div</Hi>&gt;, &lt;<Hi>span</Hi>&gt;, etc)</h2>
+
+---
+
+<Notes>HTML Tags are used to signal the structure of the page to screen readers. They're also responsible for establishing a natural tab-order for keyboard users.</Notes>
+
+### HTML tags have semantic meanings
+
+# &lt;<Hi>header</Hi>&gt; &lt;<Hi>button</Hi>&gt; &lt;<Hi>footer</Hi>&gt; &lt;<Hi>form</Hi>&gt;
+
+# &lt;<Hi>table</Hi>&gt; &lt;<Hi>a</Hi>&gt; &lt;<Hi>input</Hi>&gt; &lt;<Hi>nav</Hi>&gt;
+
+---
+
+import { badHtmlStructure, htmlPage } from './code/samples'
+
+<SplitCode
+  code={badHtmlStructure}
+  html={htmlPage}
+/>
+
+---
+
+import { goodHtmlStructure } from './code/samples'
+
+<SplitCode
+  code={goodHtmlStructure}
+  html={htmlPage}
+/>
+
+---
+
+Lesser-known semantic elements:
+
+## &lt;<Hi>article</Hi>&gt; &lt;<Hi>blockquote</Hi>&gt; &lt;<Hi>progress</Hi>&gt; &lt;<Hi>dialog</Hi>&gt;
+
+## &lt;<Hi>time</Hi>&gt; &lt;<Hi>output</Hi>&gt; &lt;<Hi>menu</Hi>&gt; &lt;<Hi>details</Hi>&gt; &lt;<Hi>meter</Hi>&gt;
+
+---
+
+## Problem \#2
+
+<h2><Hi>Incorrectly associating elements</Hi></h2>
+
+---
+
+### Some HTML tags <Hi>require</Hi> relationships with other tags
+
+# &lt;<Hi>label</Hi>&gt; &lt;<Hi>input</Hi>&gt;
+
+---
+
+import { badInputs, inputPage } from './code/samples'
+
+<SplitCode
+  code={badInputs}
+  html={inputPage}
+/>
+
+---
+
+import { goodInputs } from './code/samples'
+
+<SplitCode
+  code={goodInputs}
+  html={inputPage}
+/>
+
+---
+
+## Problem \#3
+
+<h2><Hi>Attaching events to non-interactive elements</Hi></h2>
+
+---
+
+import { badButtons, badButtonsPage } from './code/samples'
+
+<SplitCode
+  code={badButtons}
+  html={badButtonsPage}
+/>
+
+---
+
+import { goodButtons, goodButtonsPage } from './code/samples'
+
+<SplitCode
+  code={goodButtons}
+  html={goodButtonsPage}
+/>
+
+---
+
+import { badLinks, linksPage } from './code/samples'
+
+<SplitCode
+  code={badLinks}
+  html={linksPage}
+/>
+
+---
+
+import { goodLinks } from './code/samples'
+
+<SplitCode
+  code={goodLinks}
+  html={linksPage}
+/>
+
+---
+
+## Rule \#2
+
+<h2>Pick HTML elements based on what they <Hi>mean</Hi>, <br/>not based on how they <Hi>look</Hi></h2>
+
+---
+
+I get it. CSS is hard
+
+![](https://media.giphy.com/media/yYSSBtDgbbRzq/giphy.gif)
