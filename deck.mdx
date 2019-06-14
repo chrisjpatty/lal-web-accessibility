@@ -12,7 +12,7 @@ import FullsizeSandbox from './components/FullsizeSandbox'
 export const themes = [darkTheme, Syntax, theme]
 
 # Developing for <Hi>Accessibility</Hi>
-<!-- ### Some tagline -->
+*Common problems & how to fix them*
 
 ---
 
@@ -175,7 +175,7 @@ Helps make the web a less frustrating place for <Hi>everybody</Hi>
 
 ---
 
-HTML documents are accessible <Hi>by default</Hi><br/><br/>
+## HTML documents are accessible <Hi>by default</Hi><br/><br/>
 
 Websites usually become inaccessible <br/>when we <Hi>override</Hi> the browser's default behavior.
 
@@ -324,3 +324,96 @@ import { goodLinks } from './code/samples'
 </FullsizeSandbox>
 
 ---
+
+## Problem \#5
+
+# Setting font sizes <Hi>in pixels</Hi>
+
+```css
+.text {
+  font-size: 14px;
+}
+```
+
+---
+
+Literal pixel values <Hi>override</Hi> the browser's default font size.
+
+To honor accessibility settings we need use <Hi>relative</Hi> font sizes.
+
+```css
+.text{
+  font-size: 1em;
+  font-size: 1rem;
+}
+```
+
+---
+
+# What is an <Hi>em</Hi>?
+
+---
+
+<Notes>1em is roughly the height in pixels of an uppercase letter of the current font. (and font size). It's a measure of percentage.</Notes>
+
+<SVG src='./img/em.svg' width="50vw" />
+
+---
+
+For example:
+
+Default font-size = 16px;
+
+```css
+.text{
+  font-size: 1em; // Renders as 16px;
+  font-size: .5em; // Renders as 8px;
+  font-size: 2em; // Renders as 32px;
+}
+```
+
+---
+
+`em` is relative to the closest parent with a `font-size` declared.
+
+---
+
+# What is a <Hi>rem</Hi>?
+
+---
+
+<Notes>1rem is the em value of the root element.</Notes>
+
+Default font-size = 16px;
+
+```css
+:root{
+  font-size: 50%;
+}
+.text{
+  font-size: 1rem; // Renders as 8px;
+  font-size: .5rem; // Renders as 4px;
+  font-size: 2rem; // Renders as 16px;
+}
+```
+
+---
+
+With a default `font-size` of `16px` the math can get complicated.
+
+![](https://media.giphy.com/media/BmmfETghGOPrW/giphy.gif)
+
+Luckily there's a trick to make this easier
+
+---
+
+```css
+:root{
+  font-size: 62.5%;
+}
+.text{
+  font-size: 1rem; // Renders as 10px;
+  font-size: 1.7rem; // Renders as 17px;
+  font-size: .9rem; // Renders as 9px;
+}
+```
