@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const App = () => {
+function Form(){
   return (
     <div className="wrapper">
       <div className="field">

@@ -10,10 +10,11 @@ export default {
   googleFont: 'https://fonts.googleapis.com/css?family=Hind+Siliguri:400,500,600&display=swap',
   colors: {
     background: 'rgb(40, 43, 45)',
-    text: 'rgb(255, 255, 255)'
+    text: 'rgb(255, 255, 255)',
+    codeBackground: 'none !important'
   },
   code: {
-    color: 'rgb(48, 255, 37)'
+    color: 'rgb(187, 187, 187)'
   },
   h1: 'color: rgb(255, 255, 255)',
   h2: 'color: rgb(255, 255, 255)',

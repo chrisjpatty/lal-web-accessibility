@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const App = () => {
+function Form(){
   const [error, setError] = useState("");
 
   const handleSubmit = () => {
