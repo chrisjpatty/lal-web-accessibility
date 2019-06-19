@@ -9,9 +9,17 @@ export default {
   font: '"Hind Siliguri", sans-serif',
   googleFont: 'https://fonts.googleapis.com/css?family=Hind+Siliguri:400,500,600&display=swap',
   colors: {
-    background: 'rgb(40, 43, 45)'
+    background: 'rgb(40, 43, 45)',
+    text: 'rgb(255, 255, 255)'
   },
   code: {
     color: 'rgb(48, 255, 37)'
-  }
+  },
+  h1: 'color: rgb(255, 255, 255)',
+  h2: 'color: rgb(255, 255, 255)',
+  h3: 'color: rgb(255, 255, 255)',
+  h4: 'color: rgb(255, 255, 255)',
+  h5: 'color: rgb(255, 255, 255)',
+  h6: 'color: rgb(255, 255, 255)',
+  p: 'color: rgb(255, 255, 255)',
 }

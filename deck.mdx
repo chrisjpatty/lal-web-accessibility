@@ -8,8 +8,10 @@ import SVG from './components/SVG'
 import AppearSplit from './components/AppearSplit'
 import SplitCode from './components/SplitCode'
 import FullsizeSandbox from './components/FullsizeSandbox'
+import { vsDarkFull } from "code-surfer/themes";
+import { CodeSurferColumnLayout, Step, Code } from "code-surfer";
 
-export const themes = [darkTheme, Syntax, theme]
+export const themes = [darkTheme, Syntax, vsDarkFull, theme]
 
 # Developing for <Hi>Accessibility</Hi>
 *Common problems & how to fix them*
@@ -201,21 +203,53 @@ Websites usually become inaccessible <br/>when we <Hi>override</Hi> the browser'
 
 ---
 
-import { badHtmlStructure, htmlPage } from './code/samples'
+<!-- import { badHtmlStructure, htmlPage } from './code/samples'
 
 <SplitCode
   code={badHtmlStructure}
   html={htmlPage}
-/>
+/> -->
 
----
+import StructureExample from './components/StructureExample'
 
-import { goodHtmlStructure } from './code/samples'
-
-<SplitCode
-  code={goodHtmlStructure}
-  html={htmlPage}
-/>
+<CodeSurferColumnLayout sizes={[1, 2]}>
+  <Step>
+    <StructureExample />
+    <Code
+      code={require("!!raw-loader!./code/structure.1.0.js").default}
+      lang="html"
+    />
+  </Step>
+  <Step>
+    <StructureExample />
+    <Code
+      code={require("!!raw-loader!./code/structure.1.1.js").default}
+      lang="html"
+    />
+  </Step>
+  <Step>
+    <StructureExample />
+    <Code
+      code={require("!!raw-loader!./code/structure.1.3.js").default}
+      lang="html"
+    />
+  </Step>
+  <Step>
+    <StructureExample />
+    <Code
+      code={require("!!raw-loader!./code/structure.1.4.js").default}
+      lang="html"
+    />
+  </Step>
+  <Step>
+    <StructureExample />
+    <Code
+      code={require("!!raw-loader!./code/structure.1.5.js").default}
+      lang="html"
+      focus="1:11"
+    />
+  </Step>
+</CodeSurferColumnLayout>
 
 ---
 
@@ -239,21 +273,39 @@ Lesser-known semantic elements:
 
 ---
 
-import { badInputs, inputPage } from './code/samples'
+import InputsExample from './components/InputsExample'
 
-<SplitCode
-  code={badInputs}
-  html={inputPage}
-/>
-
----
-
-import { goodInputs } from './code/samples'
-
-<SplitCode
-  code={goodInputs}
-  html={inputPage}
-/>
+<CodeSurferColumnLayout sizes={[1, 2]}>
+  <Step>
+    <InputsExample />
+    <Code
+      code={require("!!raw-loader!./code/inputs.1.0.js").default}
+      lang="html"
+    />
+  </Step>
+  <Step>
+    <InputsExample />
+    <Code
+      code={require("!!raw-loader!./code/inputs.1.1.js").default}
+      lang="html"
+    />
+  </Step>
+  <Step>
+    <InputsExample />
+    <Code
+      code={require("!!raw-loader!./code/inputs.1.2.js").default}
+      lang="html"
+    />
+  </Step>
+  <Step>
+    <InputsExample />
+    <Code
+      code={require("!!raw-loader!./code/inputs.1.2.js").default}
+      lang="html"
+      focus="1:19"
+    />
+  </Step>
+</CodeSurferColumnLayout>
 
 ---
 
@@ -263,39 +315,45 @@ import { goodInputs } from './code/samples'
 
 ---
 
-import { badButtons, badButtonsPage } from './code/samples'
+import InteractiveExample from './components/InteractiveExample'
 
-<SplitCode
-  code={badButtons}
-  html={badButtonsPage}
-/>
-
----
-
-import { goodButtons, goodButtonsPage } from './code/samples'
-
-<SplitCode
-  code={goodButtons}
-  html={goodButtonsPage}
-/>
-
----
-
-import { badLinks, linksPage } from './code/samples'
-
-<SplitCode
-  code={badLinks}
-  html={linksPage}
-/>
+<CodeSurferColumnLayout sizes={[1, 2]}>
+  <Step>
+    <InteractiveExample />
+    <Code
+      code={require("!!raw-loader!./code/interactive.1.0.js").default}
+      lang="jsx"
+    />
+  </Step>
+  <Step>
+    <InteractiveExample interactive />
+    <Code
+      code={require("!!raw-loader!./code/interactive.1.1.js").default}
+      lang="jsx"
+    />
+  </Step>
+</CodeSurferColumnLayout>
 
 ---
 
-import { goodLinks } from './code/samples'
+import LinksExample from './components/LinksExample'
 
-<SplitCode
-  code={goodLinks}
-  html={linksPage}
-/>
+<CodeSurferColumnLayout sizes={[1, 2]}>
+  <Step>
+    <LinksExample />
+    <Code
+      code={require("!!raw-loader!./code/links.1.0.js").default}
+      lang="jsx"
+    />
+  </Step>
+  <Step>
+    <LinksExample />
+    <Code
+      code={require("!!raw-loader!./code/links.1.1.js").default}
+      lang="jsx"
+    />
+  </Step>
+</CodeSurferColumnLayout>
 
 ---
 
@@ -319,101 +377,76 @@ import { goodLinks } from './code/samples'
 
 ---
 
-<FullsizeSandbox>
+![](./img/problems.png)
+
+---
+
+![](./img/problems-2.png)
+
+---
+
+<!-- <FullsizeSandbox>
   <iframe src="https://codesandbox.io/embed/ewxih?fontsize=22&hidenavigation=1" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
-</FullsizeSandbox>
+</FullsizeSandbox> -->
+
+import FormExample from './components/FormExample'
+
+<CodeSurferColumnLayout sizes={[1, 2]}>
+  <Step>
+    <FormExample />
+    <Code
+      code={require("!!raw-loader!./code/live.1.0.js").default}
+      lang="jsx"
+    />
+  </Step>
+  <Step>
+    <FormExample />
+    <Code
+      code={require("!!raw-loader!./code/live.1.1.js").default}
+      lang="jsx"
+      focus="4:8,16"
+    />
+  </Step>
+  <Step>
+    <FormExample />
+    <Code
+      code={require("!!raw-loader!./code/live.1.2.js").default}
+      lang="jsx"
+      focus="16"
+    />
+  </Step>
+  <Step>
+    <FormExample />
+    <Code
+      code={require("!!raw-loader!./code/live.1.3.js").default}
+      lang="jsx"
+      focus="16:18"
+    />
+  </Step>
+  <Step>
+    <FormExample />
+    <Code
+      code={require("!!raw-loader!./code/live.1.4.js").default}
+      lang="jsx"
+      focus="13:19,21:26"
+    />
+  </Step>
+  <Step>
+    <FormExample />
+    <Code
+      code={require("!!raw-loader!./code/live.1.5.js").default}
+      lang="jsx"
+      focus="23"
+    />
+  </Step>
+  <Step>
+    <FormExample />
+    <Code
+      code={require("!!raw-loader!./code/live.1.5.js").default}
+      lang="jsx"
+      focus="1:30"
+    />
+  </Step>
+</CodeSurferColumnLayout>
 
 ---
-
-## Problem \#5
-
-# Setting font sizes <Hi>in pixels</Hi>
-
-```css
-.text {
-  font-size: 14px;
-}
-```
-
----
-
-Literal pixel values <Hi>override</Hi> the browser's default font size.
-
-To honor accessibility settings we need use <Hi>relative</Hi> font sizes.
-
-```css
-.text{
-  font-size: 1em;
-  font-size: 1rem;
-}
-```
-
----
-
-# What is an <Hi>em</Hi>?
-
----
-
-<Notes>1em is roughly the height in pixels of an uppercase letter of the current font. (and font size). It's a measure of percentage.</Notes>
-
-<SVG src='./img/em.svg' width="50vw" />
-
----
-
-For example:
-
-Default font-size = 16px;
-
-```css
-.text{
-  font-size: 1em; // Renders as 16px;
-  font-size: .5em; // Renders as 8px;
-  font-size: 2em; // Renders as 32px;
-}
-```
-
----
-
-`em` is relative to the closest parent with a `font-size` declared.
-
----
-
-# What is a <Hi>rem</Hi>?
-
----
-
-<Notes>1rem is the em value of the root element.</Notes>
-
-Default font-size = 16px;
-
-```css
-:root{
-  font-size: 50%;
-}
-.text{
-  font-size: 1rem; // Renders as 8px;
-  font-size: .5rem; // Renders as 4px;
-  font-size: 2rem; // Renders as 16px;
-}
-```
-
----
-
-With a default `font-size` of `16px` the math can get complicated.
-
-![](https://media.giphy.com/media/BmmfETghGOPrW/giphy.gif)
-
-Luckily there's a trick to make this easier
-
----
-
-```css
-:root{
-  font-size: 62.5%;
-}
-.text{
-  font-size: 1rem; // Renders as 10px;
-  font-size: 1.7rem; // Renders as 17px;
-  font-size: .9rem; // Renders as 9px;
-}
-```

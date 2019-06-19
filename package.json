@@ -4,8 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "code-surfer": "^2.0.0-alpha.6",
     "mdx-deck": "^2.3.2",
     "mdx-deck-live-code": "^1.0.1",
+    "raw-loader": "^3.0.0",
     "styled-components": "^4.3.1"
   },
   "scripts": {
