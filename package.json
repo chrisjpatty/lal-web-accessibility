@@ -12,6 +12,7 @@
   },
   "scripts": {
     "start": "mdx-deck deck.mdx",
-    "build": "mdx-deck build deck.mdx"
+    "build": "mdx-deck build deck.mdx && yarn run static",
+    "static": "cp -R img dist/"
   }
 }
