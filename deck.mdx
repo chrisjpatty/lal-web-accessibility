@@ -42,15 +42,17 @@ export const themes = [darkTheme, Syntax, vsDark, theme]
 
 <Notes></Notes>
 
-## Condition requiring assistive technologies:
+## Conditions requiring assistive technologies:
 
 <Appear>
 
-# <Hi>Visual impairments</Hi>
+## <Hi>Visual impairments</Hi>
 
-# <Hi>Motor impairments</Hi>
+## <Hi>Motor impairments</Hi>
 
-# Auditory impairments
+## Auditory impairments
+
+## Cognitive impairments
 
 </Appear>
 
@@ -162,18 +164,6 @@ Helps make the web a less frustrating place for <Hi>everybody</Hi>
 
 ---
 
-## Rule \#1
-
-<h1><Hi>Let the browser do its job</Hi></h1>
-
----
-
-## HTML documents are accessible <Hi>by default</Hi><br/><br/>
-
-Websites usually become inaccessible <br/>when we <Hi>override</Hi> the browser's default behavior.
-
----
-
 # Common Problems
 
 ---
@@ -242,6 +232,19 @@ Lesser-known semantic elements:
 ## &lt;<Hi>article</Hi>&gt; &lt;<Hi>blockquote</Hi>&gt; &lt;<Hi>progress</Hi>&gt; &lt;<Hi>dialog</Hi>&gt;
 
 ## &lt;<Hi>time</Hi>&gt; &lt;<Hi>output</Hi>&gt; &lt;<Hi>menu</Hi>&gt; &lt;<Hi>details</Hi>&gt; &lt;<Hi>meter</Hi>&gt;
+
+---
+
+
+## Rule \#1
+
+<h1><Hi>Let the browser do its job</Hi></h1>
+
+---
+
+## HTML documents are accessible <Hi>by default</Hi><br/><br/>
+
+Websites usually become inaccessible <br/>when we <Hi>override</Hi> the browser's default behavior.
 
 ---
 
@@ -440,3 +443,23 @@ import FormExample from './components/FormExample'
 </CodeSurferColumnLayout>
 
 ---
+
+## Problem \#6
+
+## Relying on <Hi>component libraries</Hi> for accessibility
+
+---
+
+<img src="./img/libraries.png" style={{width: '40vw'}} />
+
+---
+
+## Problem \#7
+
+## Relying on <Hi>color</Hi> to convey meaning
+
+---
+
+import Colorblind from './components/Colorblind'
+
+<Colorblind />
