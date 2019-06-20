@@ -2,14 +2,14 @@
   <div>
     <label id='firstName'>First name</label>
     <input
-      aria-labeledby='firstName'
+      aria-labelledby='firstName'
       type="text"
     />
   </div>
   <div>
     <label id='lastName'>Last name</label>
     <input
-      aria-labeledby='lastName'
+      aria-labelledby='lastName'
       type="text"
     />
   </div>
