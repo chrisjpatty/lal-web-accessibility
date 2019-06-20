@@ -444,7 +444,7 @@ import FormExample from './components/FormExample'
 
 ---
 
-## Problem \#7
+## Problem \#6
 
 ## Relying on <Hi>color</Hi> to convey meaning
 
@@ -453,6 +453,40 @@ import FormExample from './components/FormExample'
 import Colorblind from './components/Colorblind'
 
 <Colorblind />
+
+---
+
+## Problem \#7
+
+## Relying on <Hi>icons</Hi> to convey meaning
+
+---
+
+import Icons from './components/Icons'
+
+<CodeSurferColumnLayout sizes={[1, 2]}>
+  <Step>
+    <Icons />
+    <Code
+      code={require("!!raw-loader!./code/button.1.0.html").default}
+      lang="jsx"
+    />
+  </Step>
+  <Step>
+    <Icons />
+    <Code
+      code={require("!!raw-loader!./code/button.1.1.html").default}
+      lang="jsx"
+    />
+  </Step>
+  <Step>
+    <Icons />
+    <Code
+      code={require("!!raw-loader!./code/button.1.2.html").default}
+      lang="jsx"
+    />
+  </Step>
+</CodeSurferColumnLayout>
 
 ---
 
